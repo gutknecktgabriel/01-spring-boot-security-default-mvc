@@ -30,7 +30,7 @@ public class DemoSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(configurer ->
                 configurer
-                        .requestMatchers("/").hasRole("EMPLOYEE")
+                        .requestMatchers("/").hasRole("employee")
                         .requestMatchers("/leaders/**").hasRole("MANAGER")
                         .requestMatchers("/systems/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
